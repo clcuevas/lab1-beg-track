@@ -51,7 +51,8 @@ assert(1 === 2, "this is an assertion failure example. 1===2");
  zoo-themed.  Make one pass and one fail. In the failure message, describe why
  it failed.
 */
-
+assert("lion" === "lion");
+assert("lion" === "rhino", "the string 'lion' does not explicitly equal to the string 'rhino'.");
 /* ----------------- Meerkats -------------------------------------------------
  Meerkats make a sort of chirping noise (according to my 30 seconds of
  research).  We're going to translate two sentences into meerkat speech.
@@ -67,6 +68,36 @@ var sentence1 = "More food please.",
  **two** different kinds of loops to implement this.
  HINT: the "split" method on String will be useful.
 */
+//Example One
+function splitString(sentence) {
+  var sentence = sentence.split(" ");
+  for (var i = 0; i < sentence.length; i++) {
+    sentence[i] = "chirp";
+  }
+  sentence = sentence.join(" ") + ".";
+  console.log("Meerkats go " + sentence);
+  return sentence;
+}
+
+sentence1 = splitString(sentence1);
+sentence2 = splitString(sentence2);
+
+//Example Two
+function splitStringTwo(sentenceTwo) {
+  //counter
+  var i = 0;
+  var sentenceTwo = sentenceTwo.split(" ");
+  while (i < sentenceTwo.length) {
+    sentenceTwo[i] = "chirp";
+    i++;
+  }
+  sentenceTwo = sentenceTwo.join(" ") + ".";
+  console.log("Meerkats go " + sentenceTwo);
+  return sentenceTwo;
+}
+
+sentence1 = splitStringTwo(sentence1);
+sentence2 = splitStringTwo(sentence2);
 
 assert(sentence1 === "chirp chirp chirp.", "sentence 1 should have 3 chirps");
 assert(sentence2 === "chirp chirp chirp chirp chirp chirp chirp chirp chirp.",
@@ -84,6 +115,9 @@ var favoriteAnimals = [ "elephant", "penguin", "eagle", "camel" ],
 
 // TODO: 10 points
 // Assign one of your favorite animals to nextAnimal using Math.random() to pick
+nextAnimal = favoriteAnimals[Math.floor(Math.random() * favoriteAnimals.length)]; //random selector
+
+console.log("My random selection chose for us to visit the " + nextAnimal + " next.");
 
 assert(nextAnimal, "assign something to nextAnimal");
 
@@ -98,12 +132,13 @@ assert(nextAnimal, "assign something to nextAnimal");
 // don't require quotes for the code to work. Remove the unnecessary quotes.
 
 var animalExhibitStats = {
-  "numberOpen": 13,
+  numberOpen: 13,
   "number closed": 2,
   "petting-zoo-open": true,
-  "mostPopular": "Lucky the Emperor Penguin",
+  mostPopular: "Lucky the Emperor Penguin",
   "2ndMostPopular": "Dumbo the Depressed Donkey"
 };
+
 
 /*
  TODO: 4 points
@@ -112,7 +147,7 @@ var animalExhibitStats = {
  notation with Dot notation wherever possible.
 */
 
-assert(animalExhibitStats["numberOpen"] === 13, "there should be 13 open exhibits");
+assert(animalExhibitStats.numberOpen === 13, "there should be 13 open exhibits");
 assert(animalExhibitStats["number closed"] === 2, "there should be 2 closed exhibits");
 assert(animalExhibitStats["petting-zoo-open"], "hey! =( i was promised meerkats!");
 assert(animalExhibitStats["2ndMostPopular"] === "Dumbo the Depressed Donkey",
@@ -121,6 +156,8 @@ assert(animalExhibitStats["2ndMostPopular"] === "Dumbo the Depressed Donkey",
 // TODO: 4 points
 // Write an assert about the "mostPopular" property of animalExibitStats.
 // Use the above examples to guide you.
+assert(animalExhibitStats.mostPopular === "Lucky the Emperor Penguin", "Who is the Emperor Penguin?");
+
 
 /* ----------------- Code Style ----------------------------------------
  TODO: 10 points
