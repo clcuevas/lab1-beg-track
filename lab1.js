@@ -70,7 +70,7 @@ var sentence1 = "More food please.",
 */
 //Example One
 function splitString(sentence) {
-  var sentence = sentence.split(" ");
+  sentence = sentence.split(" ");
   for (var i = 0; i < sentence.length; i++) {
     sentence[i] = "chirp";
   }
@@ -86,7 +86,7 @@ sentence2 = splitString(sentence2);
 function splitStringTwo(sentenceTwo) {
   //counter
   var i = 0;
-  var sentenceTwo = sentenceTwo.split(" ");
+  sentenceTwo = sentenceTwo.split(" ");
   while (i < sentenceTwo.length) {
     sentenceTwo[i] = "chirp";
     i++;
@@ -139,7 +139,6 @@ var animalExhibitStats = {
   "2ndMostPopular": "Dumbo the Depressed Donkey"
 };
 
-
 /*
  TODO: 4 points
  The animalExhibitStats object is indexed four times below using bracket
@@ -156,8 +155,7 @@ assert(animalExhibitStats["2ndMostPopular"] === "Dumbo the Depressed Donkey",
 // TODO: 4 points
 // Write an assert about the "mostPopular" property of animalExibitStats.
 // Use the above examples to guide you.
-assert(animalExhibitStats.mostPopular === "Lucky the Emperor Penguin", "Who is the Emperor Penguin?");
-
+assert(animalExhibitStats.mostPopular === "Lucky the Emperor Penguin", "Emperor Penguin?");
 
 /* ----------------- Code Style ----------------------------------------
  TODO: 10 points
